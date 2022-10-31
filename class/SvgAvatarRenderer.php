@@ -1,11 +1,11 @@
 <?php
 
 /**
- * La classe Affichage regroupe les propriétés et méthodes pour 
- * afficher un Avatar à l'aide d'un tableau
+ * SvgAvatarRenderer qui va générer le code SVG d'un avatar à partir d'un objet Avatar
+ * à partir d'un objet Avatar
  */
 
-class Show {
+class  SvgAvatarRenderer {
 
     protected float  $opacity;
     
@@ -19,7 +19,7 @@ class Show {
         $this->opacity = $opacity;
     }
 
-    public function showAvatar(Avatar $obj_avatar) {
+    public function showAvatar(AvatarMatrix $obj_avatar) {
         $avatar = $obj_avatar->genAvatar();
         $size = $obj_avatar->getSize();
         $svg = '<svg width="400"  height="400" viewBox="0 0 '. $size .' '. $size .'">';

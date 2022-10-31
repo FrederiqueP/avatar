@@ -4,8 +4,9 @@
 declare(strict_types=1);
 
 // Inclusion des dépendances
-include 'class/Avatar.php';
-include 'class/Show.php';
+include 'class/AvatarMatrix.php';
+include 'class/SvgAvatarRenderer.php';
+include 'class/AvatarFactory.php';
 
 
 /**
@@ -16,19 +17,19 @@ include 'class/Show.php';
 
 // Initialisation les variables (depuis le formulaire)
 $size = 8  ;
-$num_color = 4;
-// les couleurs de l'avatar
-$colors = ['#AA3939', '#550000', '#D46A6A', '#801515'];
+$nbColor = 4;
+
+// methode public
+// $svgAvatar = new AvatarFactory($nbColor, $size);
+// $svg = $svgAvatar->new($size, $nbColor);
+
+// methode static
+$svg = AvatarFactory::new(4,2);
 
 
-// Instanciation Avatar , génération
-$avatar = new Avatar($colors,$size);
-// $avatar->genAvatar($size, $num_color, $colors);
 
-// Instanciation Affichage Avatar 
-$show = new Show();
-//$show->showAvatar(array $avatar, int $size, float $opacity);
-$svg = $show->showAvatar($avatar);
+// $svgAvatar = SVGAvatarFactory::new(4,2);
+ // Génère un avatar de taille 4 avec 2 couleurs
 
 include 'index.phtml';
 

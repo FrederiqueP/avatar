@@ -12,19 +12,13 @@
         <h1>Avatar - poo -</h1>
     </header>
     <main>
-
-        <div>
-            <!-- svg généré -->
-            <?=$svg;?>
-        </div>
-                
+        <!-- Formulaire -->
         <div>
             <form method="POST" action="index.php">
                 <label for="size">Taille</label>
                 <input type="text" id="size" name="size" value="" placeholder ="">
-                <label for="num_color">Nombre de couleurs</label>
-                <input type="text" id="num_color" name="num_color" value="" placeholder ="">
-                <p> ... et les couleurs fixées ... </p>
+                <label for="nbColor">Nombre de couleurs</label>
+                <input type="text" id="nbColor" name="nbColor" value="" placeholder ="">
                 <input type="submit" value="Générer !">
             </form>
         <?php if (($size != null) && ($nbColor != null)): ?>
@@ -33,6 +27,12 @@
         </p>
          <?php endif ;?>
         </div>
+
+        <div>
+            <!-- svg généré -->
+            <?=$svg;?>
+        </div>
+
     </main>
     
 </body>

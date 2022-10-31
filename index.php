@@ -1,7 +1,10 @@
 <?php
 
-// Déclaration du typage strict pour éviter les conversions sauvages de PHP
-declare(strict_types=1);
+require 'vendor/autoload.php';
+
+// dump($variable) : affiche le contenu d'une variable ou d'une expression de manière détaillée
+
+
 
 // Inclusion des dépendances
 include 'class/AvatarMatrix.php';
@@ -16,20 +19,25 @@ include 'class/AvatarFactory.php';
  */
 
 // Initialisation les variables (depuis le formulaire)
-$size = 8  ;
-$nbColor = 4;
+$size    = 4;
+$nbColor = 2;
 
-// methode public
-// $svgAvatar = new AvatarFactory($nbColor, $size);
-// $svg = $svgAvatar->new($size, $nbColor);
+dump($_POST);
 
-// methode static
-$svg = AvatarFactory::new(4,2);
+// Tester si le formulaire est rempli
+if(!empty($_POST)){
+    $size = $_POST['size'];
+    $nbColor = $_POST['nbColor'];
+
+    // methode public
+    // $svgAvatar = new AvatarFactory($nbColor, $size);
+    // $svg = $svgAvatar->new($size, $nbColor);
+
+    // methode static
+    $svg = AvatarFactory::new($size,$nbColor);
 
 
-
-// $svgAvatar = SVGAvatarFactory::new(4,2);
- // Génère un avatar de taille 4 avec 2 couleurs
+}
 
 include 'index.phtml';
 

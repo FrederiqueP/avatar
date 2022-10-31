@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Avatar - poo -</h1>
+    </header>
+    <main>
+        <!-- voir viewBox pour svg -->
+        <!-- <div>
+            <svg width="400"  height="400" viewBox="0 0 4 4"> 
+            <rect x="0" y="0" width="1" height="1" fill="orange" opacity="0.8'" />
+            <rect x="1" y="0" width="1" height="1" fill="pink" opacity="0.8'" />
+            <rect x="2" y="0" width="1" height="1" fill="pink" opacity="0.8'" />
+            <rect x="3" y="0" width="1" height="1" fill="orange" opacity="0.8'" />
+            <rect x="0" y="1" width="1" height="1" fill="orange" opacity="0.8'" />
+            <rect x="1" y="1" width="1" height="1" fill="pink" opacity="0.8'" />
+            <rect x="2" y="1" width="1" height="1" fill="pink" opacity="0.8'" />
+            <rect x="3" y="1" width="1" height="1" fill="orange" opacity="0.8'" />
+            <rect x="0" y="2" width="1" height="1" fill="pink" opacity="0.8'" />
+            <rect x="1" y="2" width="1" height="1" fill="orange" opacity="0.8'" />
+            <rect x="2" y="2" width="1" height="1" fill="orange" opacity="0.8'" />
+            <rect x="3" y="2" width="1" height="1" fill="pink" opacity="0.8'" />
+            <rect x="0" y="3" width="1" height="1" fill="pink" opacity="0.8'" />
+            <rect x="1" y="3" width="1" height="1" fill="orange" opacity="0.8'" />
+            <rect x="2" y="3" width="1" height="1" fill="orange" opacity="0.8'" />
+            <rect x="3" y="3" width="1" height="1" fill="pink" opacity="0.8'" />
+            </svg>    
+        </div> -->
+
+        <div>
+            <!-- svg généré -->
+            <?=$svg;?>
+        </div>
+                
+        <div>
+            <form method="POST" action="index.php">
+                <label for="size">Taille</label>
+                <input type="text" id="size" name="size" value="" placeholder ="">
+                <label for="num_color">Nombre de couleurs</label>
+                <input type="text" id="num_color" name="num_color" value="" placeholder ="">
+                <p> ... et les couleurs fixées ... </p>
+                <input type="submit" value="Générer !">
+            </form>
+        <?php if (($size != null) && ($num_color != null)): ?>
+        <p>
+            La taille :  <?php echo $size; ?> , le nombre de couleurs <?php echo $num_color; ?> 
+        </p>
+         <?php endif ;?>
+        </div>
+    </main>
+    
+</body>
+</html> 
